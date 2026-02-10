@@ -694,3 +694,9 @@ textarea:focus {
   opacity: 0.6;                /* Dimmed for subtle appearance */
   font-size: 0.9rem;           /* Slightly smaller text */
 }
+
+.map{
+  width: 100%;
+  display: block; /* чтобы не было странных отступов */
+}
+
