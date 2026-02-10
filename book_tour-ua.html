@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <!-- Character encoding -->
+  <meta charset="utf-8">
+  <!-- Responsive viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Page title in Ukrainian -->
+  <title>Квитки – Тури по місцях «Чужоземки»</title>
+
+  <!-- Favicon set -->
+  <link rel="icon" href="media/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="media/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="media/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="media/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="media/favicon/site.webmanifest">
+  <meta name="theme-color" content="#203b13">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=5">
+</head>
+
+<body>
+
+  <!-- Skip link for keyboard accessibility -->
+  <a class="skip-link" href="#main">Перейти до вмісту</a>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <!-- Logo -->
+      <a class="logo" href="index-ua.html">
+        <img src="media/img/logo.png" alt="Outlander Tours Logo">
+      </a>
+
+      <!-- Mobile burger button -->
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle"
+              type="button" aria-label="Відкрити меню навігації"
+              aria-expanded="false" aria-controls="site-nav">
+        <!-- Hamburger icon -->
+        <svg class="icon-hamburger" xmlns="http://www.w3.org/2000/svg"
+             width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <!-- Close icon -->
+        <svg class="icon-close" xmlns="http://www.w3.org/2000/svg"
+             width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+          <line x1="6" y1="18" x2="18" y2="6"></line>
+        </svg>
+      </button>
+
+      <!-- Navigation -->
+      <div class="nav-wrapper" id="site-nav">
+        <nav class="nav" aria-label="Primary">
+          <a href="locations-ua.html">Локації</a>
+          <a href="tours-ua.html">Тури</a>
+          <a href="book_tour-ua.html" aria-current="page">Квитки</a>
+          <a href="about-ua.html">Про нас</a>
+        </nav>
+
+        <!-- Language switcher -->
+        <div class="lang-switch" role="group" aria-label="Language switcher">
+          <a href="book_tour-en.html" class="lang-btn">EN</a>
+          <a href="book_tour-ua.html" class="lang-btn" aria-current="page">UA</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main" class="booking-page-main">
+
+    <!-- Background video container -->
+    <div id="booking-bg" class="background-video-container">
+      <!-- Looping ambient video -->
+      <video id="booking-bg-video" autoplay muted loop playsinline src="media/video/booking_bg.mp4"></video>
+      <!-- Dark overlay for text readability -->
+      <div class="video-overlay"></div>
+    </div>
+
+    <!-- Booking form content -->
+    <div class="container booking-content">
+
+      <!-- Success message (shown after submission) -->
+      <div id="booking-success-message" class="booking-success">
+        <h2>Дякуємо!</h2>
+        <p>Ми зв'яжемося з вами найближчим часом.</p>
+      </div>
+
+      <!-- Booking form -->
+      <form class="booking-form" id="booking-form">
+        <!-- Form heading -->
+        <h1 class="booking-h1">Забронюйте свою шотландську пригоду</h1>
+        <!-- Form description -->
+        <p class="booking-p">
+          Оберіть бажаний тур, вкажіть кількість учасників, а ми подбаємо про решту. З нетерпінням чекаємо на вас!
+        </p>
+
+        <!-- Tour selection dropdown -->
+        <div class="form-group">
+          <label for="tour-select">Оберіть ваш тур:</label>
+          <select id="tour-select" name="tour" required>
+            <option value="" disabled selected>Оберіть тур</option>
+            <option value="highlands">Високогір'я: Шлях мандрівника в часі</option>
+            <option value="edinburgh">Единбург: Місто легенд</option>
+            <option value="isle_of_skye">Острів Скай: Містичні береги</option>
+          </select>
+        </div>
+
+        <!-- Number of participants -->
+        <div class="form-group">
+          <label for="participants">Кількість учасників:</label>
+          <input type="number" id="participants" name="participants" min="1" value="1" required>
+        </div>
+
+        <!-- Preferred date -->
+        <div class="form-group">
+          <label for="date">Бажана дата:</label>
+          <input type="date" id="date" name="date" min="2025-01-01" required>
+        </div>
+
+        <!-- Full name -->
+        <div class="form-group">
+          <label for="full-name">Повне ім'я:</label>
+          <input type="text" id="full-name" name="fullName" required>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Електронна пошта:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+          <label for="phone">Номер телефону (необов'язково):</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+
+        <!-- Comments -->
+        <div class="form-group">
+          <label for="comments">Особливі побажання / Коментарі (необов'язково):</label>
+          <textarea id="comments" name="comments" rows="4"></textarea>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn primary">Підтвердити бронювання</button>
+      </form>
+
+    </div>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <!-- Footer brand -->
+      <div class="footer-section footer-brand">
+        <a class="logo" href="index-ua.html">
+          <img src="media/img/logo2.png" alt="Outlander Tours Logo">
+        </a>
+        <p>Незабутні подорожі спадщиною «Чужоземки».</p>
+      </div>
+      <!-- Footer links -->
+      <div class="footer-section footer-links">
+        <h3>Швидкі посилання</h3>
+        <ul>
+          <li><a href="tours-ua.html">Тури</a></li>
+          <li><a href="locations-ua.html">Локації</a></li>
+          <li><a href="book_tour-ua.html">Забронювати квитки</a></li>
+          <li><a href="about-ua.html">Про нас</a></li>
+        </ul>
+      </div>
+      <!-- Footer contact -->
+      <div class="footer-section footer-contact">
+        <h3>Контакти</h3>
+        <p>Ел. пошта: <a href="mailto:hello@outlandertours.example">hello@outlandertours.example</a></p>
+        <p>Телефон: +44 (0)131 000 0000</p>
+      </div>
+    </div>
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 Outlander Location Tours. Усі права захищені.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js?v=5"></script>
+</body>
+</html>

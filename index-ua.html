@@ -1,0 +1,167 @@
+<!doctype html>
+<!-- Ukrainian homepage for Outlander Location Tours -->
+<html lang="uk">
+<head>
+  <!-- Character encoding: UTF-8 supports Cyrillic characters -->
+  <meta charset="utf-8">
+  <!-- Make the page responsive on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Page title in Ukrainian -->
+  <title>Outlander Location Tours — Шотландія</title>
+  <!-- Description for search engines in Ukrainian -->
+  <meta name="description" content="Тури Шотландією за мотивами «Чужоземки»: локації зйомок, малі групи, фотозупинки та професійні гіди.">
+
+  <!-- Favicon icons for various devices and browsers -->
+  <link rel="icon" href="media/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="media/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="media/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="media/favicon/apple-touch-icon.png">
+  <!-- Web app manifest for PWA support -->
+  <link rel="manifest" href="media/favicon/site.webmanifest">
+  <!-- Theme colour for mobile browser chrome -->
+  <meta name="theme-color" content="#203b13">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Load Playfair Display (headings) and Inter (body text) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css?v=5">
+</head>
+
+<body>
+
+  <!-- Accessibility: skip link for keyboard users -->
+  <a class="skip-link" href="#main">Перейти до вмісту</a>
+
+  <!-- SITE HEADER with sticky navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <!-- Site logo linking to the Ukrainian homepage -->
+      <a class="logo" href="index-ua.html">
+        <img src="media/img/logo.png" alt="Логотип Outlander Tours">
+      </a>
+
+      <!-- Burger menu button (visible only on mobile) -->
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle"
+              type="button" aria-label="Відкрити меню навігації"
+              aria-expanded="false" aria-controls="site-nav">
+        <!-- Hamburger icon (three lines) -->
+        <svg class="icon-hamburger" xmlns="http://www.w3.org/2000/svg"
+             width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <!-- Close icon (X), shown when menu is open -->
+        <svg class="icon-close" xmlns="http://www.w3.org/2000/svg"
+             width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+          <line x1="6" y1="18" x2="18" y2="6"></line>
+        </svg>
+      </button>
+
+      <!-- Navigation wrapper: contains links and language switcher -->
+      <div class="nav-wrapper" id="site-nav">
+        <!-- Primary navigation links in Ukrainian -->
+        <nav class="nav" aria-label="Primary">
+          <a href="locations-ua.html">Локації</a>
+          <a href="tours-ua.html">Тури</a>
+          <a href="book_tour-ua.html">Квитки</a>
+          <a href="about-ua.html">Про нас</a>
+        </nav>
+
+        <!-- Language switcher -->
+        <div class="lang-switch" role="group" aria-label="Language switcher">
+          <a href="index-en.html" class="lang-btn">EN</a>
+          <a href="index-ua.html" class="lang-btn" aria-current="page">UA</a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main">
+
+    <!-- Hero section with background image slider -->
+    <section class="hero" id="hero" aria-label="Hero section">
+
+      <!-- Centred content panel overlaying the background -->
+      <div class="hero-inner container">
+        <!-- Main heading in Ukrainian -->
+        <h1>Відкрийте Шотландію. Відчуйте історію.</h1>
+        <!-- Supporting description text -->
+        <p>Подорожуйте місцями зйомок «Чужоземки» — малі групи, фотозупинки та професійні гіди.</p>
+
+        <!-- Call-to-action buttons -->
+        <div class="cta-row">
+          <a href="tours-ua.html" class="btn primary">Переглянути тури</a>
+          <a href="locations-ua.html" class="btn primary">Переглянути локації</a>
+        </div>
+      </div>
+
+      <!-- Background image slides (hidden from screen readers) -->
+      <div class="slides" aria-hidden="true">
+        <!-- Slide 1: active by default -->
+        <div class="slide active" style="background-image:url('media/img/1.jpg');"></div>
+        <!-- Slides 2-4: become active via JavaScript -->
+        <div class="slide" style="background-image:url('media/img/2.jpg');"></div>
+        <div class="slide" style="background-image:url('media/img/3.jpg');"></div>
+        <div class="slide" style="background-image:url('media/img/4.jpg');"></div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+
+      <!-- Footer brand column: logo and tagline -->
+      <div class="footer-section footer-brand">
+        <a class="logo" href="index-ua.html">
+          <img src="media/img/logo2.png" alt="Логотип Outlander Tours">
+        </a>
+        <p>Незабутні подорожі спадщиною «Чужоземки».</p>
+      </div>
+
+      <!-- Footer links column -->
+      <div class="footer-section footer-links">
+        <h3>Швидкі посилання</h3>
+        <ul>
+          <li><a href="tours-ua.html">Тури</a></li>
+          <li><a href="locations-ua.html">Локації</a></li>
+          <li><a href="book_tour-ua.html">Квитки</a></li>
+          <li><a href="about-ua.html">Про нас</a></li>
+        </ul>
+      </div>
+
+      <!-- Footer contact column -->
+      <div class="footer-section footer-contact">
+        <h3>Контакти</h3>
+        <p>Ел. пошта: <a href="mailto:hello@outlandertours.example">hello@outlandertours.example</a></p>
+        <p>Телефон: +44 (0)131 000 0000</p>
+      </div>
+
+    </div>
+
+    <!-- Copyright bar -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 Outlander Location Tours. Усі права захищені.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript file -->
+  <script src="script.js?v=5"></script>
+</body>
+</html>

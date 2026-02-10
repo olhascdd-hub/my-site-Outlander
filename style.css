@@ -1,0 +1,696 @@
+
+:root {
+  --bg: #0b120d;               /* Main dark background colour */
+  --bg-light: #131c16;         /* Slightly lighter background for cards */
+  --text: #f3f7f2;             /* Primary text colour (off-white) */
+  --muted: #c7d2c9;            /* Muted/secondary text colour */
+  --brand: #8bd47d;            /* Brand highlight colour (light green) */
+  --accent: #5fbf6b;           /* Accent colour for buttons and links */
+  --line: #1c2a20;             /* Border/divider line colour */
+
+  --radius: 12px;              /* Default border radius for small elements */
+  --radius-lg: 18px;           /* Larger border radius for cards */
+
+  --transition: 0.35s ease;    /* Default transition timing */
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.28);     /* Standard drop shadow */
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.2);  /* Softer, lighter shadow */
+}
+
+
+* {
+  margin: 0;                   /* Remove all default margins */
+  padding: 0;                  /* Remove all default padding */
+  box-sizing: border-box;      /* Include padding and border in element width */
+}
+
+html,
+body {
+  background: var(--bg);       /* Set the page background to dark green */
+  color: var(--text);          /* Set default text colour to off-white */
+  font-family: Inter, system-ui, sans-serif;  /* Use Inter font with fallbacks */
+}
+
+
+.container {
+  width: min(1280px, 92%);     /* Max 1280px wide, or 92% of viewport */
+  margin: auto;                /* Centre the container horizontally */
+}
+
+img,
+video {
+  max-width: 100%;             /* Never exceed parent width */
+  display: block;              /* Remove inline spacing below images */
+  border-radius: var(--radius); /* Rounded corners on all media */
+}
+
+a {
+  color: var(--text);          /* Links use the same colour as body text */
+  text-decoration: none;       /* Remove default underline */
+  transition: var(--transition); /* Smooth colour change on hover */
+}
+
+a:hover {
+  color: var(--brand);         /* Links turn green on hover */
+}
+
+.skip-link {
+  position: absolute;          /* Take it out of normal flow */
+  top: -40px;                  /* Hide it above the viewport */
+  left: 0;                     /* Align to the left edge */
+  background: var(--accent);   /* Green background for visibility */
+  color: #000;               /* Black text for contrast */
+  padding: 8px 16px;           /* Inner spacing */
+  text-decoration: none;       /* No underline */
+  z-index: 999;                /* Ensure it appears above everything */
+  border-radius: 0 0 var(--radius) 0; /* Round only the bottom-right corner */
+  font-weight: 600;            /* Semi-bold text */
+}
+
+.skip-link:focus {
+  top: 0;                      /* Slide into view when focused via Tab key */
+}
+
+
+.site-header {
+  background: rgba(15, 22, 17, 0.85); /* Semi-transparent dark background */
+  backdrop-filter: blur(12px);        /* Frosted glass blur effect */
+  border-bottom: 1px solid var(--line); /* Thin bottom border */
+  position: sticky;                    /* Stick to top when scrolling */
+  top: 0;                              /* Stick at the very top */
+  z-index: 50;                         /* Stay above page content */
+}
+
+.header-inner {
+  display: flex;               /* Lay out children in a row */
+  align-items: center;         /* Vertically centre all items */
+  justify-content: space-between; /* Push logo left, nav right */
+  padding: 14px 0;             /* Vertical padding inside the header */
+}
+
+.logo img {
+  height: 50px;                /* Fixed logo height */
+  width: auto;                 /* Maintain aspect ratio */
+  object-fit: contain;         /* Fit without cropping */
+}
+
+
+.nav-wrapper {
+  display: flex;               /* Lay out nav and lang switch in a row */
+  align-items: center;         /* Vertically centre them */
+  gap: 32px;                   /* Space between nav links and lang switch */
+}
+
+.nav a {
+  margin-left: 24px;           /* Space between each nav link */
+  font-weight: 600;            /* Semi-bold text */
+  opacity: 0.9;                /* Slightly transparent by default */
+}
+
+.nav a[aria-current="page"] {
+  color: var(--brand);         /* Highlight the current page link in green */
+}
+
+
+.lang-switch {
+  display: flex;               /* Place buttons side by side */
+  gap: 8px;                    /* Small gap between EN and UA */
+}
+
+.lang-btn {
+  padding: 6px 14px;           /* Inner spacing */
+  border-radius: var(--radius); /* Rounded corners */
+  border: 1px solid var(--line); /* Subtle border */
+  opacity: 0.85;               /* Slightly transparent when inactive */
+  background: transparent;     /* No background by default */
+  color: var(--text);          /* White text */
+  cursor: pointer;             /* Show pointer cursor on hover */
+  text-decoration: none;       /* No underline (it is a link) */
+  font-weight: 600;            /* Semi-bold text */
+  transition: var(--transition); /* Smooth hover transition */
+}
+
+.lang-btn[aria-current="page"],
+.lang-btn[aria-current="true"] {
+  background: var(--accent);   /* Active language gets green background */
+  color: #000;               /* Dark text on green background */
+  border-color: var(--accent); /* Border matches background */
+  opacity: 1;                  /* Fully opaque when active */
+}
+
+
+.mobile-menu-toggle {
+  display: none;               /* Hidden by default (desktop) */
+  background: none;            /* No background */
+  border: none;                /* No border */
+  color: var(--text);          /* White icon colour */
+  cursor: pointer;             /* Pointer cursor */
+  z-index: 101;                /* Above the mobile nav overlay */
+}
+
+.icon-close {
+  display: none;               /* Close icon hidden by default */
+}
+
+
+@media (max-width: 820px) {
+
+  .nav-wrapper {
+    position: fixed;           /* Fix to viewport so it overlays content */
+    width: 100%;               /* Full width of the screen */
+    top: 78px;                 /* Position below the header bar */
+    left: 0;                   /* Align to the left edge */
+    flex-direction: column;    /* Stack nav links vertically */
+    background: #0f1611;     /* Solid dark background */
+    padding: 32px 20px;        /* Inner spacing */
+    transform: translateY(-200%); /* Start off-screen above */
+    transition: var(--transition); /* Animate the slide-down */
+    z-index: 99;               /* Below the burger button (101) */
+    align-items: flex-start;   /* Align links to the left */
+    gap: 20px;                 /* Space between nav sections */
+  }
+
+  .site-header.nav-open .nav-wrapper {
+    transform: translateY(0);  /* Slide into view when menu is open */
+  }
+
+  .mobile-menu-toggle {
+    display: block;            /* Show the burger button on mobile */
+  }
+
+  .icon-hamburger {
+    display: block;            /* Show hamburger icon by default */
+  }
+
+  .site-header.nav-open .icon-hamburger {
+    display: none;             /* Hide hamburger when menu is open */
+  }
+
+  .site-header.nav-open .icon-close {
+    display: block;            /* Show close (X) icon when menu is open */
+  }
+
+  .nav {
+    display: flex;             /* Stack nav links vertically */
+    flex-direction: column;    /* Vertical layout */
+    width: 100%;               /* Full width links */
+  }
+
+  .nav a {
+    margin: 12px 0;            /* Vertical spacing between links */
+    font-size: 1.2rem;         /* Slightly larger text for touch targets */
+    display: block;            /* Each link takes full width */
+    width: 100%;               /* Full width */
+    border-bottom: 1px solid var(--line); /* Separator between links */
+    padding-bottom: 10px;      /* Space before the separator */
+  }
+
+  .lang-switch {
+    margin-top: 20px;          /* Extra space above language buttons */
+  }
+}
+
+
+.hero {
+  height: 85vh;                /* Take up 85% of the viewport height */
+  position: relative;          /* Positioning context for slides */
+  overflow: hidden;            /* Hide anything outside the hero box */
+  display: grid;               /* Use grid to centre the inner panel */
+  place-items: center;         /* Centre both horizontally and vertically */
+}
+
+.hero-inner {
+  position: relative;          /* Stay above the background slides */
+  z-index: 2;                  /* Layer above the slides (z-index 1) */
+  width: min(1100px, 92%);     /* Responsive max width */
+  text-align: center;          /* Centre all text inside */
+  padding: 44px 36px;          /* Inner spacing */
+  border-radius: 22px;         /* Rounded corners */
+  background: rgba(15, 22, 17, 0.75); /* Semi-transparent dark overlay */
+  backdrop-filter: blur(12px); /* Blur the background behind the panel */
+  box-shadow: var(--shadow);   /* Drop shadow for depth */
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem); /* Fluid font size: min 1.8rem, max 3rem */
+  font-family: "Playfair Display", serif; /* Decorative serif font */
+  margin-bottom: 16px;         /* Space below the heading */
+}
+
+.hero p {
+  max-width: 800px;            /* Limit paragraph width for readability */
+  margin: 0 auto;              /* Centre the paragraph horizontally */
+  opacity: 0.85;               /* Slightly transparent for softer look */
+}
+
+.cta-row {
+  margin-top: 28px;            /* Space above the button row */
+  display: flex;               /* Place buttons side by side */
+  justify-content: center;     /* Centre the buttons */
+  gap: 16px;                   /* Space between buttons */
+  flex-wrap: wrap;             /* Wrap to next line on small screens */
+}
+
+
+.slides {
+  position: absolute;          /* Cover the entire hero section */
+  inset: 0;                    /* Stretch to all four edges */
+  z-index: 1;                  /* Behind the hero content (z-index 2) */
+}
+
+.slide {
+  position: absolute;          /* Stack all slides on top of each other */
+  inset: 0;                    /* Fill the entire slides container */
+  opacity: 0;                  /* Hidden by default */
+  background-size: cover;      /* Scale image to fill the area */
+  background-position: center; /* Centre the image */
+  transition: opacity 2s ease; /* Smooth 2-second fade effect */
+}
+
+.slide.active {
+  opacity: 1;                  /* Make the active slide visible */
+}
+
+
+.pan-left {
+  animation: panLeft 12s ease forwards;   /* Pan from right to left */
+}
+
+.pan-right {
+  animation: panRight 12s ease forwards;  /* Pan from left to right */
+}
+
+.pan-up {
+  animation: panUp 12s ease forwards;     /* Pan from bottom to top */
+}
+
+.pan-down {
+  animation: panDown 12s ease forwards;   /* Pan from top to bottom */
+}
+
+/* Pan left: start slightly right and zoomed in, end slightly left */
+@keyframes panLeft {
+  from {
+    transform: scale(1.08) translateX(20px);
+  }
+  to {
+    transform: scale(1) translateX(-20px);
+  }
+}
+
+/* Pan right: start slightly left and zoomed in, end slightly right */
+@keyframes panRight {
+  from {
+    transform: scale(1.08) translateX(-20px);
+  }
+  to {
+    transform: scale(1) translateX(20px);
+  }
+}
+
+/* Pan up: start slightly low and zoomed in, end slightly high */
+@keyframes panUp {
+  from {
+    transform: scale(1.08) translateY(20px);
+  }
+  to {
+    transform: scale(1) translateY(-20px);
+  }
+}
+
+/* Pan down: start slightly high and zoomed in, end slightly low */
+@keyframes panDown {
+  from {
+    transform: scale(1.08) translateY(-20px);
+  }
+  to {
+    transform: scale(1) translateY(20px);
+  }
+}
+
+
+.btn {
+  padding: 12px 22px;          /* Inner spacing */
+  border-radius: var(--radius); /* Rounded corners */
+  font-weight: 600;            /* Semi-bold text */
+  border: 1px solid var(--line); /* Subtle border */
+  transition: var(--transition); /* Smooth hover effect */
+  display: inline-block;       /* Allow padding and margin */
+}
+
+.btn.primary {
+  background: var(--accent);   /* Green background */
+  color: #000;               /* Dark text */
+}
+
+.btn.primary:hover {
+  background: var(--brand);    /* Lighter green on hover */
+}
+
+
+.tours-h1 {
+  font-family: "Playfair Display", serif; /* Decorative heading font */
+  font-size: clamp(1.8rem, 4vw, 2.8rem); /* Fluid responsive font size */
+}
+
+.tours-p {
+  margin: 10px 0 20px;         /* Space above and below */
+  max-width: 600px;            /* Limit width for readability */
+  opacity: 0.85;               /* Slightly transparent */
+}
+
+.tours-grid {
+  display: grid;               /* Grid layout for tour cards */
+  gap: 32px;                   /* Space between cards */
+  margin-top: 40px;            /* Space above the grid */
+}
+
+.tour-card {
+  background: var(--bg-light); /* Lighter card background */
+  padding: 20px;               /* Inner spacing */
+  border-radius: var(--radius-lg); /* Large rounded corners */
+  box-shadow: var(--shadow-soft); /* Soft drop shadow */
+  display: grid;               /* Grid layout inside the card */
+  gap: 20px;                   /* Space between video and text */
+}
+
+.tour-card-video video {
+  width: 100%;                 /* Video fills the card width */
+  aspect-ratio: 16 / 9;        /* Maintain widescreen proportions */
+  object-fit: cover;           /* Crop to fill the area */
+  display: block;              /* Remove inline spacing */
+  border-radius: var(--radius-lg); /* Rounded corners on video */
+}
+
+.duration {
+  font-size: 0.9rem;           /* Slightly smaller text */
+  opacity: 0.7;                /* Dimmed for secondary info */
+  display: block;              /* Own line */
+  margin-bottom: 6px;          /* Small gap below */
+}
+
+.tour-card-content {
+  display: flex;               /* Flex layout for text and buttons */
+  flex-direction: column;      /* Stack elements vertically */
+  gap: 12px;                   /* Space between each element */
+  align-items: flex-start;     /* Align content to the left */
+}
+
+/* On screens wider than 820px, show 3 tour cards per row */
+@media (min-width: 820px) {
+  .tours-grid {
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  }
+}
+
+
+.location-slider-container {
+  position: relative;          /* Positioning context for buttons */
+  margin-top: 40px;            /* Space above the slider */
+}
+
+.location-slider {
+  position: relative;          /* Contain absolute positioned slides */
+  overflow: hidden;            /* Hide slides that are not active */
+  border-radius: var(--radius-lg); /* Rounded corners */
+}
+
+.loc-slide {
+  display: none;               /* Hide all slides by default */
+  text-align: center;          /* Centre content */
+  position: relative;          /* Allow caption positioning */
+}
+
+.loc-slide.active {
+  display: block;              /* Show only the active slide */
+}
+
+.loc-slide img,
+.loc-slide video {
+  width: 100%;                 /* Fill the slider width */
+  aspect-ratio: 16/9;          /* Maintain widescreen ratio */
+  object-fit: cover;           /* Crop to fill */
+}
+
+.loc-caption {
+  position: absolute;          /* Overlay on top of the image/video */
+  bottom: 0;                   /* Stick to the bottom */
+  left: 0;                     /* Stretch from left */
+  right: 0;                    /* Stretch to right */
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
+  padding: 20px;               /* Inner spacing */
+  text-align: left;            /* Left-align caption text */
+}
+
+.loc-caption h3 {
+  margin-bottom: 5px;          /* Small gap below the title */
+  font-size: 1.4rem;           /* Slightly larger heading */
+}
+
+.loc-caption p {
+  opacity: 0.9;                /* Slightly transparent body text */
+  font-size: 0.95rem;          /* Slightly smaller text */
+}
+
+.slider-btn {
+  position: absolute;          /* Position over the slider */
+  top: 50%;                    /* Vertically centre */
+  transform: translateY(-50%); /* Offset by half the button height */
+  padding: 14px;               /* Inner spacing */
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  color: #fff;               /* White arrow colour */
+  border-radius: 50%;          /* Circular button */
+  font-size: 24px;             /* Arrow size */
+  cursor: pointer;             /* Pointer cursor */
+  border: none;                /* No border */
+  z-index: 10;                 /* Above the slide content */
+  transition: background 0.3s ease; /* Smooth hover transition */
+  display: flex;               /* Centre the arrow icon */
+  align-items: center;         /* Vertically centre */
+  justify-content: center;     /* Horizontally centre */
+  width: 50px;                 /* Fixed width */
+  height: 50px;                /* Fixed height */
+}
+
+.slider-btn:hover {
+  background: var(--accent);   /* Green background on hover */
+  color: #000;               /* Dark arrow on hover */
+}
+
+#loc-prev {
+  left: 16px;                  /* Position the previous button on the left */
+}
+
+#loc-next {
+  right: 16px;                 /* Position the next button on the right */
+}
+
+
+.booking-page-main {
+  position: relative;          /* Positioning context for background video */
+  min-height: 100vh;           /* At least full viewport height */
+  padding-bottom: 60px;        /* Space at the bottom */
+}
+
+.background-video-container {
+  position: absolute;          /* Cover the entire main area */
+  inset: 0;                    /* Stretch to all edges */
+  overflow: hidden;            /* Hide overflow */
+  z-index: 1;                  /* Behind the form content */
+}
+
+.background-video-container video {
+  width: 100%;                 /* Fill the container width */
+  height: 100%;                /* Fill the container height */
+  object-fit: cover;           /* Crop to fill without distortion */
+}
+
+.video-overlay {
+  position: absolute;          /* Cover the video */
+  inset: 0;                    /* Stretch to all edges */
+  background: rgba(0, 0, 0, 0.55); /* Dark semi-transparent overlay */
+}
+
+.booking-content {
+  position: relative;          /* Above the background video */
+  z-index: 2;                  /* Layer above the video (z-index 1) */
+  padding-top: 60px;           /* Space from the top */
+  max-width: 620px;            /* Limit form width */
+}
+
+.booking-form {
+  background: var(--bg-light); /* Dark card background */
+  padding: 28px;               /* Inner spacing */
+  border-radius: var(--radius-lg); /* Rounded corners */
+  box-shadow: var(--shadow);   /* Drop shadow */
+}
+
+.form-group {
+  margin-bottom: 16px;         /* Space between form fields */
+  display: flex;               /* Flex layout */
+  flex-direction: column;      /* Stack label above input */
+}
+
+.form-group label {
+  margin-bottom: 8px;          /* Space between label and input */
+  font-weight: 600;            /* Semi-bold labels */
+}
+
+input,
+select,
+textarea {
+  padding: 10px 12px;          /* Inner spacing */
+  border-radius: var(--radius); /* Rounded corners */
+  border: 1px solid var(--line); /* Subtle border */
+  background: #0f1812;       /* Dark input background */
+  color: var(--text);          /* White text */
+  font-family: inherit;        /* Use the same font as the rest of the site */
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;               /* Remove default browser outline */
+  border-color: var(--accent); /* Green border when focused */
+}
+
+.booking-success {
+  margin-top: 30px;            /* Space above the success message */
+  padding: 28px;               /* Inner spacing */
+  text-align: center;          /* Centre the text */
+  background: #112017;       /* Dark green background */
+  border-radius: var(--radius-lg); /* Rounded corners */
+  display: none;               /* Hidden by default */
+}
+
+.booking-success.active {
+  display: block;              /* Show when active class is added */
+  position: fixed;             /* Fix to the centre of the screen */
+  top: 50%;                    /* Vertical centre */
+  left: 50%;                   /* Horizontal centre */
+  transform: translate(-50%, -50%); /* Offset to true centre */
+  margin-top: 0;               /* Reset margin when fixed */
+  width: min(720px, 92%);      /* Responsive width */
+  z-index: 60;                 /* Above the sticky header (z-index 50) */
+}
+
+
+.about-gif {
+  max-width: 100%;             /* Never exceed parent width */
+  height: auto;                /* Maintain aspect ratio */
+  display: block;              /* Block-level element */
+  margin: 20px auto;           /* Centre horizontally with vertical spacing */
+  border-radius: 12px;         /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Drop shadow */
+}
+
+.about-stack {
+  display: grid;               /* Grid layout for about cards */
+  gap: 40px;                   /* Space between cards */
+}
+
+.about-card {
+  background: var(--bg-light); /* Card background */
+  padding: 28px;               /* Inner spacing */
+  border-radius: var(--radius-lg); /* Rounded corners */
+  box-shadow: var(--shadow-soft); /* Soft shadow */
+}
+
+.about-card-grid {
+  display: grid;               /* Grid layout inside the card */
+  gap: 24px;                   /* Space between columns */
+}
+
+/* On wider screens, show text and image side by side */
+@media (min-width: 860px) {
+  .about-card-grid {
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    align-items: center;            /* Vertically centre content */
+  }
+}
+
+.about-list {
+  list-style-position: inside; /* Place bullet markers inside the text flow */
+}
+
+.about-list li {
+  margin: 8px 0;               /* Vertical spacing between list items */
+  opacity: 0.85;               /* Slightly transparent */
+}
+
+.grid-enquiry {
+  display: grid;               /* Grid layout for the inquiry form */
+  gap: 20px;                   /* Space between form fields */
+}
+
+/* On wider screens, show form fields in two columns */
+@media (min-width: 760px) {
+  .grid-enquiry {
+    grid-template-columns: 1fr 1fr; /* Two columns */
+  }
+
+  .cell-msg {
+    grid-column: 1 / -1;       /* Message field spans both columns */
+  }
+
+  .form-actions {
+    grid-column: 1 / -1;       /* Submit button spans both columns */
+  }
+}
+
+.success-panel {
+  text-align: center;          /* Centre the text */
+  padding: 28px;               /* Inner spacing */
+  background: #112017;       /* Dark green background */
+  border-radius: var(--radius-lg); /* Rounded corners */
+  box-shadow: var(--shadow);   /* Drop shadow */
+  width: min(720px, 92%);      /* Responsive width */
+  margin: 30px auto 0;         /* Centre horizontally with top spacing */
+}
+
+.success-check {
+  font-size: 3rem;             /* Large checkmark icon */
+  color: var(--brand);         /* Green colour */
+  margin-bottom: 16px;         /* Space below the checkmark */
+}
+
+
+.site-footer {
+  margin-top: 60px;            /* Space above the footer */
+  background: #101913;       /* Slightly different dark background */
+  padding: 40px 0 20px;        /* Vertical padding */
+}
+
+.footer-content {
+  display: grid;               /* Grid layout for footer columns */
+  gap: 32px;                   /* Space between columns */
+}
+
+/* On wider screens, show footer in three columns */
+@media (min-width: 760px) {
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  }
+}
+
+.footer-section h3 {
+  margin-bottom: 12px;         /* Space below section headings */
+  font-size: 1.1rem;           /* Slightly larger text */
+  color: var(--brand);         /* Green heading colour */
+}
+
+.footer-section ul {
+  list-style: none;            /* Remove bullet markers */
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;          /* Space between list items */
+}
+
+.footer-bottom {
+  text-align: center;          /* Centre the copyright text */
+  margin-top: 40px;            /* Space above */
+  padding-top: 20px;           /* Padding above the text */
+  border-top: 1px solid var(--line); /* Thin separator line */
+  opacity: 0.6;                /* Dimmed for subtle appearance */
+  font-size: 0.9rem;           /* Slightly smaller text */
+}

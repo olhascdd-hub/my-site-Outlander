@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <!-- Character encoding -->
+  <meta charset="utf-8">
+  <!-- Responsive viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Page title in Ukrainian -->
+  <title>Локації – Тури по місцях «Чужоземки»</title>
+
+  <!-- Favicon set -->
+  <link rel="icon" href="media/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="media/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="media/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="media/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="media/favicon/site.webmanifest">
+  <meta name="theme-color" content="#203b13">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=5">
+</head>
+
+<body>
+
+  <!-- Skip link for keyboard accessibility -->
+  <a class="skip-link" href="#main">Перейти до вмісту</a>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <!-- Logo -->
+      <a class="logo" href="index-ua.html">
+        <img src="media/img/logo.png" alt="Outlander Tours Logo">
+      </a>
+
+      <!-- Mobile burger button -->
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle"
+              type="button" aria-label="Відкрити меню навігації"
+              aria-expanded="false" aria-controls="site-nav">
+        <!-- Hamburger icon -->
+        <svg class="icon-hamburger" xmlns="http://www.w3.org/2000/svg"
+             width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <!-- Close icon -->
+        <svg class="icon-close" xmlns="http://www.w3.org/2000/svg"
+             width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+          <line x1="6" y1="18" x2="18" y2="6"></line>
+        </svg>
+      </button>
+
+      <!-- Navigation: Locations is the current page -->
+      <div class="nav-wrapper" id="site-nav">
+        <nav class="nav" aria-label="Primary">
+          <a href="locations-ua.html" aria-current="page">Локації</a>
+          <a href="tours-ua.html">Тури</a>
+          <a href="book_tour-ua.html">Квитки</a>
+          <a href="about-ua.html">Про нас</a>
+        </nav>
+
+        <!-- Language switcher -->
+        <div class="lang-switch" role="group" aria-label="Language switcher">
+          <a href="locations-en.html" class="lang-btn">EN</a>
+          <a href="locations-ua.html" class="lang-btn" aria-current="page">UA</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main" class="container" style="padding: 48px 0;">
+
+    <h1 class="tours-h1">Локації зйомок</h1>
+    <p class="tours-p">
+      Галерея справжніх стоячих каменів, замків і провулків, які оживили світ «Чужоземки».
+      Використовуйте стрілки для перегляду.
+    </p>
+
+    <!-- Location slider -->
+    <div class="location-slider-container">
+      <div class="location-slider">
+
+        <figure class="loc-slide active">
+          <video src="media/video/highlands.mp4" loop muted playsinline></video>
+          <figcaption class="loc-caption">
+            <h3>Високогір'я</h3>
+            <p>Відчуйте величезні драматичні пейзажі, що є серцем «Чужоземки».</p>
+          </figcaption>
+        </figure>
+
+        <figure class="loc-slide">
+          <img src="media/img/Loli.png" alt="Лалліброх (Замок Мідхоуп)">
+          <figcaption class="loc-caption">
+            <h3>Лалліброх (Замок Мідхоуп)</h3>
+            <p>Знаковий родовий маєток Джеймі Фрейзера.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="loc-slide">
+          <video src="media/video/edinburgh.mp4" loop muted playsinline></video>
+          <figcaption class="loc-caption">
+            <h3>Провулки Единбурга</h3>
+            <p>Пройдіться історичною Королівською Милею, де розташовувалася друкарня Олександра Малькольма.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="loc-slide">
+          <img src="media/img/scotland-bridge.jpg" alt="Крег-на-Дун">
+          <figcaption class="loc-caption">
+            <h3>Крег-на-Дун</h3>
+            <p>Таємничі стоячі камені, з яких почалася подорож Клер.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="loc-slide">
+          <video src="media/video/skye.mp4" loop muted playsinline></video>
+          <figcaption class="loc-caption">
+            <h3>Острів Скай</h3>
+            <p>Драматичний, туманний острів, сповнений магії та історії.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="loc-slide">
+          <img src="media/img/Edii3.png" alt="Провулок Бейкхаус">
+          <figcaption class="loc-caption">
+            <h3>Провулок Бейкхаус</h3>
+            <p>Місце розташування друкарні Олександра Малькольма в Единбурзі.</p>
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <!-- Previous slide button -->
+      <button class="slider-btn prev" id="loc-prev" aria-label="Попередній слайд">&#10094;</button>
+      <!-- Next slide button -->
+      <button class="slider-btn next" id="loc-next" aria-label="Наступний слайд">&#10095;</button>
+    </div>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <!-- Footer brand -->
+      <div class="footer-section footer-brand">
+        <a class="logo" href="index-ua.html">
+          <img src="media/img/logo2.png" alt="Outlander Tours Logo">
+        </a>
+        <p>Незабутні подорожі спадщиною «Чужоземки».</p>
+      </div>
+      <!-- Footer links -->
+      <div class="footer-section footer-links">
+        <h3>Швидкі посилання</h3>
+        <ul>
+          <li><a href="tours-ua.html">Тури</a></li>
+          <li><a href="locations-ua.html">Локації</a></li>
+          <li><a href="book_tour-ua.html">Забронювати квитки</a></li>
+          <li><a href="about-ua.html">Про нас</a></li>
+        </ul>
+      </div>
+      <!-- Footer contact -->
+      <div class="footer-section footer-contact">
+        <h3>Контакти</h3>
+        <p>Ел. пошта: <a href="mailto:hello@outlandertours.example">hello@outlandertours.example</a></p>
+        <p>Телефон: +44 (0)131 000 0000</p>
+      </div>
+    </div>
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 Outlander Location Tours. Усі права захищені.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js?v=5"></script>
+</body>
+</html>

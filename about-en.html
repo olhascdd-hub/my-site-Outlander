@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Character encoding -->
+  <meta charset="utf-8">
+  <!-- Responsive viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Page title -->
+  <title>About Us – Outlander Location Tours</title>
+
+  <!-- Favicon set -->
+  <link rel="icon" href="media/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="media/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="media/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="media/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="media/favicon/site.webmanifest">
+  <meta name="theme-color" content="#203b13">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet with cache-busting parameter -->
+  <link rel="stylesheet" href="style.css?v=5">
+</head>
+
+<body>
+
+  <!-- Skip link for keyboard accessibility -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <!-- Logo -->
+      <a class="logo" href="index-en.html">
+        <img src="media/img/logo.png" alt="Outlander Tours Logo">
+      </a>
+
+      <!-- Mobile burger button -->
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle"
+              type="button" aria-label="Open navigation menu"
+              aria-expanded="false" aria-controls="site-nav">
+        <!-- Hamburger icon -->
+        <svg class="icon-hamburger" xmlns="http://www.w3.org/2000/svg"
+             width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <!-- Close icon -->
+        <svg class="icon-close" xmlns="http://www.w3.org/2000/svg"
+             width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+          <line x1="6" y1="18" x2="18" y2="6"></line>
+        </svg>
+      </button>
+
+      <!-- Navigation -->
+      <div class="nav-wrapper" id="site-nav">
+        <nav class="nav" aria-label="Primary">
+          <a href="locations-en.html">Locations</a>
+          <a href="tours-en.html">Tours</a>
+          <a href="book_tour-en.html">Tickets</a>
+          <a href="about-en.html" aria-current="page">About</a>
+        </nav>
+
+        <!-- Language switcher -->
+        <div class="lang-switch" role="group" aria-label="Language switcher">
+          <a href="about-en.html" class="lang-btn" aria-current="page">EN</a>
+          <a href="about-ua.html" class="lang-btn">UA</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main" class="container" style="padding: 48px 0 64px 0">
+
+    <!-- Page heading -->
+    <h1>About Outlander Location Tours</h1>
+    <!-- Introductory paragraph -->
+    <p class="tours-p">
+      We run small-group and private Outlander-themed tours across Scotland – crafted for fans of the series and for
+      anyone eager to discover real Scottish history and landscapes.
+    </p>
+
+    <!-- Stack of about cards -->
+    <section class="about-stack">
+
+      <!-- Card 1: What we provide  -->
+      <div class="about-card about-card-grid">
+
+        <!-- Left column: text content -->
+        <div class="about-card-text">
+          <h2>What we provide</h2>
+
+          <!-- List of services -->
+          <ul class="about-list">
+            <li>Small-group and private tours to filming locations and historic sites.</li>
+            <li>Guides who connect scenes from the series with real events and places.</li>
+            <li>Custom itineraries for schools, colleges, and history groups.</li>
+            <li>Comfortable coaches, including accessible options upon request.</li>
+          </ul>
+
+          <!-- Contact details -->
+          <div class="about-contacts">
+            <h3>Contact</h3>
+            <p>
+              Email: <a href="mailto:hello@outlandertours.example">hello@outlandertours.example</a><br>
+              Phone: +44 (0)131 000 0000
+            </p>
+            <p>Edinburgh, Scotland</p>
+          </div>
+        </div>
+
+        <!-- Right column: video -->
+        <div class="about-card-image">
+          <!-- Proper video element with source child -->
+          <video class="about-video" autoplay muted loop playsinline>
+            <source src="media/video/dance.mp4" type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+
+      <!-- Card 2: Google Map showing our location in central Edinburgh -->
+      <div class="about-card">
+        <!-- Section heading -->
+        <h2>Find Us</h2>
+        <!-- Short description of the meeting point -->
+        <p class="tours-p">Our tours depart from the heart of Edinburgh's Royal Mile.</p>
+
+        <!--
+          Google Maps embed iframe
+          - Points to the Royal Mile area in central Edinburgh (55.9503, -3.1883)
+          - Uses the free Google Maps embed URL (no API key required)
+        -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2234.270071373598!2d-3.190!3d55.9503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c7837b340937%3A0xaf82184629da8aed!2sRoyal%20Mile%2C%20Edinburgh!5e0!3m2!1sen!2sgb!4v1700000000000!5m2!1sen!2sgb"
+          width="100%"
+          height="400"
+          style="border: 0; border-radius: 12px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Our location on the Royal Mile, Edinburgh">
+        </iframe>
+      </div>
+
+      <!-- Card 3: Inquiry form -->
+      <div class="about-card">
+
+        <!-- Form wrapper -->
+        <div id="about-enquiry-form-wrapper">
+          <h2>Send us an inquiry</h2>
+          <p class="tours-p">
+            Tell us your dates, group size, and interests – we'll propose routes and pricing tailored to your needs.
+          </p>
+
+          <!-- Inquiry form with grid layout -->
+          <form id="about-enquiry-form" class="about-form grid-enquiry">
+
+            <!-- Full name field -->
+            <div class="form-group cell-name">
+              <label for="about-name">Full name</label>
+              <input id="about-name" name="name" type="text" required>
+            </div>
+
+            <!-- Email field -->
+            <div class="form-group cell-email">
+              <label for="about-email">Email</label>
+              <input id="about-email" name="email" type="email" required>
+            </div>
+
+            <!-- Tour type dropdown -->
+            <div class="form-group cell-type">
+              <label for="about-type">Tour type</label>
+              <select id="about-type" name="type" required>
+                <option value="" disabled selected>Select</option>
+                <option value="group">Small-group tour</option>
+                <option value="private">Private tour</option>
+                <option value="school">School / college</option>
+              </select>
+            </div>
+
+            <!-- Participants number -->
+            <div class="form-group cell-people">
+              <label for="about-people">Participants</label>
+              <input id="about-people" name="people" type="number" min="1" value="1" required>
+            </div>
+
+            <!-- Message textarea -->
+            <div class="form-group cell-msg">
+              <label for="about-message">Your message</label>
+              <textarea id="about-message" name="message" rows="6"></textarea>
+            </div>
+
+            <!-- Submit button -->
+            <div class="form-actions">
+              <button class="btn primary enquiry-submit" type="submit">Send</button>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Success panel (hidden by default, shown after submission) -->
+        <div id="about-enquiry-success" class="success-panel" hidden>
+          <div class="success-check">✔</div>
+          <h3>Thank you!</h3>
+          <p>We will contact you very soon.</p>
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <!-- Footer brand -->
+      <div class="footer-section footer-brand">
+        <a class="logo" href="index-en.html">
+          <img src="media/img/logo2.png" alt="Outlander Tours Logo">
+        </a>
+        <p>Unforgettable journeys through Outlander's heritage.</p>
+      </div>
+      <!-- Footer links -->
+      <div class="footer-section footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="tours-en.html">Tours</a></li>
+          <li><a href="locations-en.html">Locations</a></li>
+          <li><a href="book_tour-en.html">Book Tickets</a></li>
+          <li><a href="about-en.html">About Us</a></li>
+        </ul>
+      </div>
+      <!-- Footer contact -->
+      <div class="footer-section footer-contact">
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:hello@outlandertours.example">hello@outlandertours.example</a></p>
+        <p>Phone: +44 (0)131 000 0000</p>
+      </div>
+    </div>
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 Outlander Location Tours. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js?v=5"></script>
+</body>
+</html>

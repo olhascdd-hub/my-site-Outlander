@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Character encoding -->
+  <meta charset="utf-8">
+  <!-- Responsive viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Page title -->
+  <title>Tours – Outlander Location Tours</title>
+
+  <!-- Favicon set -->
+  <link rel="icon" href="media/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="media/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="media/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="media/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="media/favicon/site.webmanifest">
+  <meta name="theme-color" content="#203b13">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=5">
+</head>
+
+<body>
+
+  <!-- Skip link for keyboard accessibility -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <!-- Logo linking to homepage -->
+      <a class="logo" href="index-en.html">
+        <img src="media/img/logo.png" alt="Outlander Tours Logo">
+      </a>
+
+      <!-- Mobile burger button -->
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle"
+              type="button" aria-label="Open navigation menu"
+              aria-expanded="false" aria-controls="site-nav">
+        <!-- Hamburger icon -->
+        <svg class="icon-hamburger" xmlns="http://www.w3.org/2000/svg"
+             width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <!-- Close icon -->
+        <svg class="icon-close" xmlns="http://www.w3.org/2000/svg"
+             width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+          <line x1="6" y1="18" x2="18" y2="6"></line>
+        </svg>
+      </button>
+
+      <!-- Navigation and language switcher -->
+      <div class="nav-wrapper" id="site-nav">
+        <!-- Primary nav -->
+        <nav class="nav" aria-label="Primary">
+          <a href="locations-en.html">Locations</a>
+          <a href="tours-en.html" aria-current="page">Tours</a>
+          <a href="book_tour-en.html">Tickets</a>
+          <a href="about-en.html">About</a>
+        </nav>
+
+        <!-- Language switcher -->
+        <div class="lang-switch" role="group" aria-label="Language switcher">
+          <a href="tours-en.html" class="lang-btn" aria-current="page">EN</a>
+          <a href="tours-ua.html" class="lang-btn">UA</a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main">
+    <div class="container" style="padding: 48px 0;">
+
+      <!-- Page heading -->
+      <h1 class="tours-h1">Our Scotland Tours</h1>
+      <p class="tours-p">
+        Explore the mystical landscapes and historical sites of the Scottish Highlands, the vibrant capital, and the stunning Isle of Skye.
+      </p>
+
+      <!-- Grid of tour cards (3 columns on desktop) -->
+      <div class="tours-grid">
+
+        <div class="tour-card">
+          
+          <div class="tour-card-video">
+            <video src="media/video/highlands.mp4" loop muted autoplay playsinline></video>
+          </div>
+
+          <div class="tour-card-content">
+            <span class="duration">3 Days / 2 Nights</span>
+            <h3>Highlands: Time Traveler's Path</h3>
+            <p>A deep Highland journey through lochs, battlefields, and ancient castles. Iconic Outlander landscapes, photo stops, and stories.</p>
+            <a class="btn primary" href="book_tour-en.html">Book Now</a>
+            <a class="btn primary" href="locations-en.html">See Locations</a>
+          </div>
+        </div>
+
+
+        <div class="tour-card">
+          
+          <div class="tour-card-video">
+            <video src="media/video/edinburgh.mp4" loop muted autoplay playsinline></video>
+          </div>
+          
+          <div class="tour-card-content">
+            <span class="duration">1 Day</span>
+            <h3>Edinburgh: City of Legends</h3>
+            <p>Walk the Royal Mile and hidden closes, then visit Edinburgh Castle. Discover Outlander links, history, and the city's best viewpoints.</p>
+            <a class="btn primary" href="book_tour-en.html">Book Now</a>
+            <a class="btn primary" href="locations-en.html">See Locations</a>
+          </div>
+        </div>
+
+        
+        <div class="tour-card">
+          
+          <div class="tour-card-video">
+            <video src="media/video/skye.mp4" loop muted autoplay playsinline></video>
+          </div>
+          
+          <div class="tour-card-content">
+            <span class="duration">4 Days / 3 Nights</span>
+            <h3>Isle of Skye: Mystic Shores</h3>
+            <p>Explore Skye's dramatic cliffs, fairy pools, and sweeping coastal roads. Wild scenery, short walks, and unforgettable photo spots.</p>
+            <a class="btn primary" href="book_tour-en.html">Book Now</a>
+            <a class="btn primary" href="locations-en.html">See Locations</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+
+      <!-- Footer brand -->
+      <div class="footer-section footer-brand">
+        <a class="logo" href="index-en.html">
+          <img src="media/img/logo2.png" alt="Outlander Tours Logo">
+        </a>
+        <p>Unforgettable journeys through Outlander's heritage.</p>
+      </div>
+
+      <!-- Footer links -->
+      <div class="footer-section footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="tours-en.html">Tours</a></li>
+          <li><a href="locations-en.html">Locations</a></li>
+          <li><a href="book_tour-en.html">Book Tickets</a></li>
+          <li><a href="about-en.html">About Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Footer contact -->
+      <div class="footer-section footer-contact">
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:hello@outlandertours.example">hello@outlandertours.example</a></p>
+        <p>Phone: +44 (0)131 000 0000</p>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 Outlander Location Tours. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js?v=5"></script>
+</body>
+</html>

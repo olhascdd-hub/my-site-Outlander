@@ -1,0 +1,269 @@
+<!doctype html>
+<!-- Ukrainian about page with company info, inquiry form, and Google Map -->
+<html lang="uk">
+<head>
+  <!-- Character encoding -->
+  <meta charset="utf-8">
+  <!-- Responsive viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Page title in Ukrainian -->
+  <title>Про нас – Тури по місцях «Чужоземки»</title>
+
+  <!-- Favicon set -->
+  <link rel="icon" href="media/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="media/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="media/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="media/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="media/favicon/site.webmanifest">
+  <meta name="theme-color" content="#203b13">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=5">
+</head>
+
+<body>
+
+  <!-- Skip link for keyboard accessibility -->
+  <a class="skip-link" href="#main">Перейти до вмісту</a>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <!-- Logo -->
+      <a class="logo" href="index-ua.html">
+        <img src="media/img/logo.png" alt="Outlander Tours Logo">
+      </a>
+
+      <!-- Mobile burger button -->
+      <button id="mobile-menu-toggle" class="mobile-menu-toggle"
+              type="button" aria-label="Відкрити меню навігації"
+              aria-expanded="false" aria-controls="site-nav">
+        <!-- Hamburger icon -->
+        <svg class="icon-hamburger" xmlns="http://www.w3.org/2000/svg"
+             width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <!-- Close icon -->
+        <svg class="icon-close" xmlns="http://www.w3.org/2000/svg"
+             width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+          <line x1="6" y1="18" x2="18" y2="6"></line>
+        </svg>
+      </button>
+
+      <!-- Navigation -->
+      <div class="nav-wrapper" id="site-nav">
+        <nav class="nav" aria-label="Primary">
+          <a href="locations-ua.html">Локації</a>
+          <a href="tours-ua.html">Тури</a>
+          <a href="book_tour-ua.html">Квитки</a>
+          <a href="about-ua.html" aria-current="page">Про нас</a>
+        </nav>
+
+        <!-- Language switcher -->
+        <div class="lang-switch" role="group" aria-label="Language switcher">
+          <a href="about-en.html" class="lang-btn">EN</a>
+          <a href="about-ua.html" class="lang-btn" aria-current="page">UA</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main" class="container" style="padding: 48px 0 64px">
+
+    <!-- Page heading -->
+    <h1>Про Outlander Location Tours</h1>
+    <!-- Introductory paragraph -->
+    <p class="tours-p">
+      Ми проводимо приватні та групові тури по Шотландії на тему «Чужоземки» – створені для шанувальників серіалу та всіх, хто хоче відкрити для себе справжню історію та красу Шотландії.
+    </p>
+
+    <!-- Stack of about cards -->
+    <section class="about-stack">
+
+      <!-- Card 1: What we provide (two-column on desktop) -->
+      <div class="about-card about-card-grid">
+
+        <!-- Left column: text content -->
+        <div class="about-card-text">
+          <h2>Що ми надаємо</h2>
+
+          <!-- List of services -->
+          <ul class="about-list">
+            <li>Приватні та групові тури до місць зйомок та історичних пам'яток.</li>
+            <li>Гіди, які поєднують сцени серіалу з реальними подіями та місцями.</li>
+            <li>Індивідуальні маршрути для шкіл, коледжів та історичних груп.</li>
+            <li>Комфортабельні автобуси, включно з доступними варіантами за запитом.</li>
+          </ul>
+
+          <!-- Contact details -->
+          <div class="about-contacts">
+            <h3>Контакти</h3>
+            <p>
+              Ел. пошта: <a href="mailto:hello@outlandertours.example">hello@outlandertours.example</a><br>
+              Телефон: +44 (0)131 000 0000
+            </p>
+            <p>Единбург, Шотландія</p>
+          </div>
+        </div>
+
+        <!-- Right column: video -->
+        <div class="about-card-image">
+          <!-- Proper video element with source child -->
+          <video class="about-video" autoplay muted loop playsinline>
+            <source src="media/video/dance.mp4" type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+
+      <!-- Card 2: Google Map showing our location in central Edinburgh -->
+      <div class="about-card">
+        <!-- Section heading -->
+        <h2>Як нас знайти</h2>
+        <!-- Short description of the meeting point -->
+        <p class="tours-p">Наші тури стартують із серця Единбурга — Королівської Милі.</p>
+
+        <!--
+          Google Maps embed iframe
+          - Points to the Royal Mile area in central Edinburgh (55.9503, -3.1883)
+          - Uses the free Google Maps embed URL (no API key required)
+          - loading="lazy" delays the map until the user scrolls near it
+          - allowfullscreen lets users expand the map
+          - title provides accessible name for screen readers
+        -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2234.270071373598!2d-3.190!3d55.9503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4887c7837b340937%3A0xaf82184629da8aed!2sRoyal%20Mile%2C%20Edinburgh!5e0!3m2!1sen!2sgb!4v1700000000000!5m2!1sen!2sgb"
+          width="100%"
+          height="400"
+          style="border: 0; border-radius: 12px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Наше розташування на Королівській Милі, Единбург">
+        </iframe>
+      </div>
+
+      <!-- Card 3: Inquiry form -->
+      <div class="about-card">
+
+        <!-- Form wrapper -->
+        <div id="about-enquiry-form-wrapper">
+
+          <h2>Надішліть нам запит</h2>
+          <p class="tours-p">
+            Напишіть ваші дати, кількість учасників та інтереси – ми підберемо маршрут і вартість.
+          </p>
+
+          <!-- Inquiry form with grid layout -->
+          <form id="about-enquiry-form" class="about-form grid-enquiry">
+
+            <!-- Full name field -->
+            <div class="form-group cell-name">
+              <label for="about-name">Повне ім'я</label>
+              <input id="about-name" name="name" type="text" required>
+            </div>
+
+            <!-- Email field -->
+            <div class="form-group cell-email">
+              <label for="about-email">Ел. пошта</label>
+              <input id="about-email" name="email" type="email" required>
+            </div>
+
+            <!-- Tour type dropdown -->
+            <div class="form-group cell-type">
+              <label for="about-type">Тип туру</label>
+              <select id="about-type" name="type" required>
+                <option value="" disabled selected>Оберіть</option>
+                <option value="group">Тур у малій групі</option>
+                <option value="private">Приватний тур</option>
+                <option value="school">Школа / коледж</option>
+              </select>
+            </div>
+
+            <!-- Participants number -->
+            <div class="form-group cell-people">
+              <label for="about-people">Учасники</label>
+              <input id="about-people" name="people" type="number" min="1" value="1" required>
+            </div>
+
+            <!-- Message textarea -->
+            <div class="form-group cell-msg">
+              <label for="about-message">Ваше повідомлення</label>
+              <textarea id="about-message" name="message" rows="6"></textarea>
+            </div>
+
+            <!-- Submit button -->
+            <div class="form-actions">
+              <button class="btn primary enquiry-submit" type="submit">Надіслати</button>
+            </div>
+
+          </form>
+
+        </div>
+        <!-- End of form wrapper -->
+
+        <!-- Success panel (hidden by default, shown after submission) -->
+        <div id="about-enquiry-success" class="success-panel" hidden>
+          <div class="success-check">✔</div>
+          <h3>Дякуємо!</h3>
+          <p>Ми зв'яжемося з вами найближчим часом.</p>
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <!-- Footer brand -->
+      <div class="footer-section footer-brand">
+        <a class="logo" href="index-ua.html">
+          <img src="media/img/logo2.png" alt="Outlander Tours Logo">
+        </a>
+        <p>Незабутні подорожі спадщиною «Чужоземки».</p>
+      </div>
+      <!-- Footer links -->
+      <div class="footer-section footer-links">
+        <h3>Швидкі посилання</h3>
+        <ul>
+          <li><a href="tours-ua.html">Тури</a></li>
+          <li><a href="locations-ua.html">Локації</a></li>
+          <li><a href="book_tour-ua.html">Забронювати квитки</a></li>
+          <li><a href="about-ua.html">Про нас</a></li>
+        </ul>
+      </div>
+      <!-- Footer contact -->
+      <div class="footer-section footer-contact">
+        <h3>Контакти</h3>
+        <p>Ел. пошта: <a href="mailto:hello@outlandertours.example">hello@outlandertours.example</a></p>
+        <p>Телефон: +44 (0)131 000 0000</p>
+      </div>
+    </div>
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 Outlander Location Tours. Усі права захищені.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js?v=5"></script>
+</body>
+</html>
